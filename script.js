@@ -18,5 +18,31 @@ $('#firstDiv').css({
 
 // When hovered over div, change color to red
 $('#firstDiv').mouseover(function () {
-    ('#firstDiv').css('backgroundColor', 'red')
+    $('#firstDiv').css('backgroundColor', 'red')
+})
+
+// When out of div, change back to default color
+$('#firstDiv').mouseout(function () {
+    $('#firstDiv').css('backgroundColor', 'white')
+})
+
+// Add paragraph and when clicked change to random colors
+$('body').append('<p> This is a paragraph for jQuery lab. </p>')
+
+$('p').click(function () {
+    let $colorArray = ['red', 'blue', 'purple', 'green', 'yellow']
+    let $randomColors = Math.floor(Math.random() * $colorArray.length)
+    $('p').css('color', $colorArray[$randomColors])
+})
+
+$('#nameButton').click(function () {
+    $('#nameDiv').append('<span> Trent Harper </span>')
+})
+
+// when friends button clicked, list item of strings in array should appear
+$('#friendsButton').click(function () {
+    let $friendsArray = ['Sydney', 'Tray', 'Manny', 'Sean', 'Amy', 'Austin', 'Jennifer', 'Gus', 'Evans', 'Matt']
+    let $friendsmsg = $friendsArray[0]
+    $('#friendsUl').append('<li> + $friendsmsg + </li>')
+    $friendsmsg++
 })
